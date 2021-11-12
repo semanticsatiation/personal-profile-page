@@ -3,9 +3,21 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .home-container {
-    height:100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 5000px;
     color: white;
     font-size: 20px;
+}
+
+.mountain-content {
+    position: relative;
+    height: 900px;
+    width: 100%;
+    z-index: 5;
 }
 
 header {
@@ -48,16 +60,17 @@ button {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.575);
-    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
     width: 100%;
+    background: rgba(0, 0, 0, 0.575);
+    z-index: 6;
+
     a {
-        // width: 40px;
         font-size: 40px;
     }
 
@@ -67,7 +80,7 @@ footer {
 
 }
 
-.stars, .twinkling, .clouds {
+.stars, .twinkling {
 	position:absolute;
 	display:block;
 	top:0; bottom:0;
@@ -76,14 +89,48 @@ footer {
 }
 
 .stars {
-	z-index: -2;
-	background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+	z-index: 0;
+	background: #000 url('https://user-images.githubusercontent.com/74139058/141348979-6d966729-b555-4d26-897a-8ed415b8159a.png') repeat top center;
 }
 
 .twinkling{
-	z-index: -1;
+	z-index: 2;
 	background:transparent url('https://image.ibb.co/ir1DE8/twinkling.png') repeat top center;
 	animation: move-twink-back 200s linear infinite;
+}
+
+.mountain-container {
+    position: absolute;
+    height: 500px;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.clouds {
+    position: absolute;
+    bottom: 0;
+    z-index: 1;
+    height: 80vw;
+    max-height: 100%;
+    width: 100%;
+    background:transparent url('https://image.ibb.co/bT4N7T/clouds.png') repeat top center;
+    filter: brightness(1000%);
+	animation: move-clouds-back 200s linear infinite;
+}
+
+@media all and (min-width: 500px) {
+    img:not(.mountain) {
+        display: block;
+        width: 500px;
+        height: auto;
+    }
 }
 
 
