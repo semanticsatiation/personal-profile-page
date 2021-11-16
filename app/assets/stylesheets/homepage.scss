@@ -110,6 +110,10 @@ div[class*="-intro"] {
 
 
 .mountain-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: relative;
     height: 100vh;
     width: 100%;
@@ -120,6 +124,7 @@ div[class*="-intro"] {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
 
     font-size: 25px;
 
@@ -149,17 +154,11 @@ button {
 }
 
 .projects-list {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    box-sizing: border-box;
-    margin: auto;
-    height: calc(100% - 123.5px);
+    display: inline-block;
     overflow: auto;
-    gap: 40px 0;
-    margin: 0 30px;
-    padding: 0 30px 10px 30px;
+    height: calc(100% - 163.5px);
+    padding: 0 10px;
+    text-align: center;
 
     h1 {
         font-weight: bold;
@@ -173,9 +172,8 @@ button {
     }
 
     li {
-        width: 100%;
+        padding: 10px;
         max-width: 750px;
-        min-width: 200px;
     }
 
     li:hover img {
